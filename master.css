@@ -1,0 +1,174 @@
+html,body {
+	padding: 0px; margin:0px;
+}
+#page-container { 
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	overflow: auto;
+	}
+	
+#main{
+	/*border:2px solid blue;  */
+	width: 75%;
+	height: 45%;
+	margin:auto;
+	clear:both;
+	padding:7px;
+}
+#box1 {
+	/*border: 2px solid red; */
+	height:50%;
+	width: 30%;
+	float:left;
+	margin-top: 30px;
+	margin-left: 300px;
+}
+#box2 {
+	/* border: 2px solid green; */
+	height:50%;
+	width: 30%;
+	float:right;
+	margin-top:30px;
+	margin-right: 300px;
+}
+.image {
+	
+	border: 2px solid black;
+	width: 60%;
+	height: 50%;
+	margin: auto;
+	position:relative;
+	left: 20%;
+	
+}
+ 
+.batman-text{
+	color:white;
+	font-family: sans-serif;
+	padding: 10px;
+	font-size: 2.2em;
+}
+div.batman-text::first-letter{
+	color: white;
+font-size: 200%;}
+
+/* Hovering tooltip */
+.tooltip 
+{
+	position:relative;
+	border-bottom: 2px dotted white;
+	display:inline;
+}
+
+.tooltip .tooltip_content
+{
+	visibility:hidden; 
+	width: 8em;
+	background-color: lightblue;
+	color:red;
+	text-align: center;
+	padding:3px;
+	position:absolute;
+	z-index:1;
+	font-size: 0.7em;
+	top: -5px;
+	left: 110%;
+	opacity: 0;
+	transition: opacity 1.2s;
+}
+
+.tooltip .tooltip_content::after
+{
+	content: " ";
+	position:absolute;
+	top: 50%;
+	right:100%;
+	margin-top: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent navy transparent transparent;
+}
+
+.tooltip:hover .tooltip_content { 
+	visibility:visible;
+	opacity: 1;
+}
+
+.rides
+{
+	background-color: grey;
+	font-size: 1.8em;
+	color: black;
+	overflow:auto;
+	font-family: verdana;
+	text-align:center;
+	text-transform: uppercase;
+	width:730px;
+	
+}
+/* Image dropdowns */
+.dropdown
+{
+	position:relative;
+	display:inline;
+	float:left;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+.dropdown-img
+{
+	display: none;
+	position:absolute;
+	min-width: 260px;
+	
+}
+
+.dropdown:hover .dropdown-img
+{
+	display:block;
+	border:5px solid red;
+}
+
+.info 
+{
+	padding: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: red;
+}
+
+
+/* Buttons */
+	a:link, a:visited 
+	{
+		
+		color: white;
+		border: 2px solid red;
+		text-decoration: none;
+		padding: 10px;
+		text-align: center;
+		display: block;
+		border-bottom: none;
+		font-size:1.5em;
+		font-family:arial;
+	}
+	
+	a:hover, a:active {
+		background-color: yellow;
+		color: black;
+		font-weight: bold;
+		font-size: xx-large;
+	}
+a:last-child { border-bottom: 2px solid red;}
+
+.misc 
+{
+	font-size: 1.8em;
+	font-family: verdana;
+	color:white;
+	text-align:left;
+}
+	
