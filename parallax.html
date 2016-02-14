@@ -1,0 +1,116 @@
+<!-- Referred to blog post by Keith Clark. 
+The link to his blog is http://keithclark.co.uk/ 
+-->
+<!-- Parallax effect created using only CSS. -->
+
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width">
+<style>	
+html,body {
+margin: 0;
+padding: 0;
+}
+.parallax
+{
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-perspective: 1px;
+	perspective: 1px;
+	
+}
+
+.parallax-layer
+{
+position:absolute;
+top: 0;
+right:0;
+bottom:0;
+left:0;
+}
+
+.base-layer
+{
+-webkit-transform: translateZ(-1px);
+transform: translateZ(-1px);
+}
+
+.front-layer
+{
+-webkit-transform: translateZ(0)
+transform: translateZ(0);
+z-index:1;
+
+}
+.layer-2
+{
+-webkit-transform:translateZ(-3px) scale(3);
+transform: translateZ(-3px) scale(3);
+z-index:5;
+}
+.body{
+font-family: arial; margin:0; padding:0;
+}
+.parallax
+{
+	font-size:350%;
+}
+.parallax-layer{ padding: 100vh 0;}
+.title
+{
+	position:absolute;
+	left:50%;
+	top:50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+parallax-group
+{
+position:relative;
+height:100vh;
+transform-style: preserve-3d;
+}
+
+</style>
+
+<title>CSS parallax </title>
+</head>
+
+<body>
+	<div class="parallax">
+	<div class="parallax-group">
+		<div class="parallax-layer base-layer">
+			<div class="title" style="background-color:red">this is background</div>
+		</div>
+	</div>
+	<div class="parallax-group">
+		<div class="parallax-layer front-layer">
+			<div class="title" style="background-color:yellow">this is front layer</div>
+		</div>
+		<div class="parallax-layer layer-2">
+			<div class="title" style="background-color:green"> this is deep background</div>
+		</div> 
+	</div>
+	</div>
+</body>
+
+
+<!-- Notes:
+1. scale() is used for depth correction. When we translate any element 
+along the z-axis, it's size changes as it moves away from view.
+
+2. scale factor = 1 + (translateZ() * -1) / perspective
+
+3. Lower the value of translateZ() slower it will scroll ie parallax would be 
+more visible and pronounced.
+
+4. To group multiple parallax sections we need to group different layers.
+
+5. Hiding overflow will break the parallax. Thus, unclipped elements have to be fixed
+by trial and error. Try to work around with the z-index values for a fit.
+
+6. transform-style: preserve-3d prevents the browser from flattening the parallax-layer
+elements.
+-->
